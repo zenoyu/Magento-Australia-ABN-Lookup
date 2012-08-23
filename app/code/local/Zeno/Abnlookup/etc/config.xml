@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Zeno_Abnlookup>
+      <version>0.1.0</version>
+    </Zeno_Abnlookup>
+  </modules>
+  <frontend>
+    <routers>
+      <abnlookup>
+        <use>standard</use>
+          <args>
+            <module>Zeno_Abnlookup</module>
+            <frontName>abnlookup</frontName>
+          </args>
+      </abnlookup>
+    </routers>
+	<layout>
+      <updates>
+        <abnlookup>
+          <file>abnlookup.xml</file>
+        </abnlookup>
+      </updates>
+    </layout>
+  </frontend>
+  <global>
+    <helpers>
+      <abnlookup>
+        <class>Zeno_Abnlookup_Helper</class>
+      </abnlookup>
+    </helpers>
+	<blocks>
+	  <abnlookup>
+		<class>Zeno_Abnlookup_Block</class>
+	  </abnlookup>
+	</blocks>
+  </global>
+  <admin>
+	<routers>
+	  <abnlookup>
+	    <use>admin</use>
+		<args>
+		  <module>Zeno_Abnlookup</module>
+		  <frontName>abnlookup</frontName>
+		</args>
+	  </abnlookup>
+	</routers>
+  </admin>
+  <adminhtml>
+	<menu>
+	  <abnlookup module="abnlookup">
+		<title>Abnlookup</title>
+		<sort_order>100</sort_order>
+		<children>
+		  <abnlookupbackend module="abnlookup">
+			<title>ABN Lookup</title>
+			<sort_order>0</sort_order>
+			<action>abnlookup/adminhtml_abnlookupbackend</action>
+		  </abnlookupbackend>
+		</children>
+	  </abnlookup>
+	</menu>
+	<acl>
+	  <resources>
+		<all>
+		  <title>Allow Everything</title>
+		</all>
+		<admin>
+		  <children>
+			<abnlookup translate="title" module="abnlookup">
+			  <title>Abnlookup</title>
+			  <sort_order>1000</sort_order>
+			  <children>
+		  <abnlookupbackend translate="title">
+			<title>ABN Lookup</title>
+		  </abnlookupbackend>
+			  </children>
+			</abnlookup>
+		  </children>
+		</admin>
+	  </resources>
+	</acl>
+	<layout>
+	  <updates>
+		<abnlookup>
+		  <file>abnlookup.xml</file>
+		</abnlookup>
+	  </updates>
+	</layout>
+  </adminhtml>
+</config> 

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <abnlookup_adminhtml_abnlookupbackend_index>
+	<reference name="content">
+	  <block type="abnlookup/adminhtml_abnlookupbackend" name="abnlookupbackend" template="abnlookup/abnlookupbackend.phtml"/>
+	</reference>
+  </abnlookup_adminhtml_abnlookupbackend_index>
+</layout>
